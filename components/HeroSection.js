@@ -18,7 +18,7 @@ const HeroSection = () => {
       <div className="container mx-auto px-4 relative z-10 text-center">
         <div className="flex items-center justify-center mb-4">
           <BatteryCharging className="text-green-400" size={56} />
-          <h1 className="text-4xl md:text-6xl font-bold text-white ml-2">HELLO</h1>
+          <h1 className="text-4xl md:text-6xl font-bold text-white ml-2">ChargeDock</h1>
         </div>
         <p className="text-xl md:text-2xl text-white max-w-3xl mx-auto mt-4 mb-8">
           Sustainable E-Mobility Charging and Storage Infrastructure
