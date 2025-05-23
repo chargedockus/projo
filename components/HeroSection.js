@@ -13,12 +13,12 @@ const HeroSection = () => {
         />
         <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/60"></div>
       </div>
-      
+
       {/* Content */}
       <div className="container mx-auto px-4 relative z-10 text-center">
         <div className="flex items-center justify-center mb-4 space-x-3">
-          <BatteryCharging className="text-green-400 animate-pulse animate-float" size={48} />
-          <h1 className="text-4xl md:text-6xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-blue-500 fade-in-up leading-relaxed">
+          <BatteryCharging className="text-green-400 animate-float" size={48} />
+          <h1 className="text-4xl md:text-8xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-blue-500 fade-in-up leading-relaxed pb-2">
             ChargeDock
           </h1>
         </div>
@@ -27,15 +27,15 @@ const HeroSection = () => {
         </p>
         <a 
           href="#problem" 
-          className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-green-500 to-blue-500 text-white rounded-lg font-medium hover:from-green-600 hover:to-blue-600 hover:scale-110 hover:shadow-2xl hover:shadow-green-500/70 transition-all duration-300 animate-fade-in relative overflow-hidden group animate-pulse-border"
+          className="inline-flex items-center px-8 py-4 bg-gradient-to-r from-green-500 to-blue-500 text-white rounded-lg font-medium hover:from-green-600 hover:to-blue-600 hover:scale-110 hover:shadow-2xl hover:shadow-green-500/70 transition-all duration-300 animate-pulse-border relative overflow-hidden group"
         >
           <span className="relative z-10">Learn More</span>
           <span className="absolute inset-0 bg-white/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
         </a>
       </div>
-      
+
       {/* Scroll Indicator with Bounce */}
-      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce-slow motion-reduce:animate-none">
+      <div className="absolute bottom-8 left-1/2 transform -translate-x-1/2 animate-bounce-slow">
         <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
           <path d="M12 5V19M12 19L19 12M12 19L5 12" stroke="white" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"/>
         </svg>
@@ -55,33 +55,19 @@ const HeroSection = () => {
         }
 
         @keyframes fadeIn {
-          from {
-            opacity: 0;
-          }
-          to {
-            opacity: 1;
-          }
+          from { opacity: 0; }
+          to { opacity: 1; }
         }
 
         @keyframes slowZoom {
-          0% {
-            transform: scale(1);
-          }
-          100% {
-            transform: scale(1.1);
-          }
+          0% { transform: scale(1); }
+          100% { transform: scale(1.1); }
         }
 
         @keyframes bounceSlow {
-          0%, 20%, 50%, 80%, 100% {
-            transform: translateY(0);
-          }
-          40% {
-            transform: translateY(-10px);
-          }
-          60% {
-            transform: translateY(-5px);
-          }
+          0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+          40% { transform: translateY(-10px); }
+          60% { transform: translateY(-5px); }
         }
 
         @keyframes slideLeftToRight {
@@ -118,22 +104,13 @@ const HeroSection = () => {
           animation: slowZoom 10s infinite alternate ease-in-out;
         }
 
-        .animate-pulse {
-          animation: pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-        }
-
         .animate-bounce-slow {
           animation: bounceSlow 3s infinite;
         }
 
-        .leading-relaxed {
-          line-height: 1.4;
-        }
-
         .slide-left-to-right {
-          opacity: 0;
           animation: slideLeftToRight 1.5s ease-out forwards;
-          text-shadow: 0 0 5px rgba(74, 222, 128, 0.5);
+          opacity: 0;
         }
 
         .animate-float {
@@ -151,7 +128,6 @@ const HeroSection = () => {
         }
 
         @media (prefers-reduced-motion: reduce) {
-          .animate-pulse,
           .animate-bounce-slow,
           .bg-zoom,
           .fade-in-up,
@@ -161,7 +137,7 @@ const HeroSection = () => {
           .animate-pulse-border {
             animation: none !important;
             opacity: 1 !important;
-            transform: translateX(0) !important;
+            transform: none !important;
             box-shadow: none !important;
           }
         }
