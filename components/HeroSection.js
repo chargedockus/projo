@@ -27,7 +27,7 @@ const HeroSection = () => {
 
       {/* Content */}
       <div className="container mx-auto px-4 max-w-2xl sm:max-w-3xl lg:max-w-4xl text-center relative z-10">
-        <div className="flex flex-col sm:flex-row items-center justify-center mb-4 gap-4 sm:space-x-4">
+        <div className="flex flex-row items-center justify-center mb-4 gap-4">
           <BatteryCharging className="text-green-400 w-16 h-16 sm:w-24 sm:h-24 md:w-36 md:h-36" />
           <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-8xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-blue-500 fade-in-up leading-relaxed pb-2">
             ChargeDock
