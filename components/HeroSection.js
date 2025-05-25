@@ -1,13 +1,11 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { BatteryCharging } from 'lucide-react';
 
 const HeroSection = () => {
-  const paragraphRef = useRef(null);
+  const [isClient, setIsClient] = useState(false);
 
   useEffect(() => {
-    if (paragraphRef.current) {
-      paragraphRef.current.classList.add('slide-left-to-right');
-    }
+    setIsClient(true);
   }, []);
 
   return (
@@ -33,12 +31,14 @@ const HeroSection = () => {
             ChargeDock
           </h1>
         </div>
-        <p
-          ref={paragraphRef}
-          className="text-xl md:text-4xl text-white max-w-3xl mx-auto mt-4 mb-8 font-modern whitespace-nowrap"
-        >
-          Sustainable E-Mobility Charging Infrastructure
-        </p>
+
+        {/* Only render this paragraph on the client to avoid mismatch */}
+        {isClient && (
+          <p className="text-xl md:text-4xl text-white max-w-3xl mx-auto mt-4 mb-8 font-modern whitespace-nowrap slide-left-to-right">
+            Sustainable E-Mobility Charging Infrastructure
+          </p>
+        )}
+
         <a 
           href="#problem" 
           className="inline-flex items-center px-11 py-5 bg-gradient-to-r from-green-500 to-blue-500 text-white rounded-lg font-medium hover:from-green-600 hover:to-blue-600 hover:scale-110 hover:shadow-2xl hover:shadow-green-500/70 transition-all duration-300 animate-pulse-border relative overflow-hidden group"
