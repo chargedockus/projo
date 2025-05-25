@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { BatteryCharging } from 'lucide-react';
 
 const HeroSection = () => {
@@ -7,6 +7,8 @@ const HeroSection = () => {
   useEffect(() => {
     setIsClient(true);
   }, []);
+
+  if (!isClient) return null; // Skip rendering on the server
 
   return (
     <section className="relative h-screen flex items-center justify-center overflow-hidden">
@@ -32,12 +34,9 @@ const HeroSection = () => {
           </h1>
         </div>
 
-        {/* Only render this paragraph on the client to avoid mismatch */}
-        {isClient && (
-          <p className="text-xl md:text-4xl text-white max-w-3xl mx-auto mt-4 mb-8 font-modern whitespace-nowrap slide-left-to-right">
-            Sustainable E-Mobility Charging Infrastructure
-          </p>
-        )}
+        <p className="text-xl md:text-4xl text-white max-w-3xl mx-auto mt-4 mb-8 font-modern whitespace-nowrap slide-left-to-right">
+          Sustainable E-Mobility Charging Infrastructure
+        </p>
 
         <a 
           href="#problem" 
