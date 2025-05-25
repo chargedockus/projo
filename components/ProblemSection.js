@@ -25,7 +25,7 @@ const ProblemSection = () => {
 
           {/* Right Column */}
           <div className="flex-1 flex flex-col justify-center">
-            <h3 className="text-xl font-semibold text-center mb-6">
+            <h3 className="text-2xl font-semibold text-center mb-6">
               UL Standards & Certifications Survey of Colleges & Universities
             </h3>
 

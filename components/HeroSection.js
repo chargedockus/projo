@@ -1,22 +1,26 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { BatteryCharging } from 'lucide-react';
 
 const HeroSection = () => {
-  const [isClient, setIsClient] = useState(false);
+  const paragraphRef = useRef(null);
 
   useEffect(() => {
-    setIsClient(true); // Prevent hydration mismatch by ensuring client-only animations run after mount
+    if (paragraphRef.current) {
+      paragraphRef.current.classList.add('slide-left-to-right');
+    }
   }, []);
 
   return (
     <section className="relative h-screen flex items-center justify-center overflow-hidden">
-      {/* Background Image with Zoom Animation */}
+      {/* Background Video */}
       <div className="absolute inset-0 z-0">
-        <img 
-          src="https://cdn.pixabay.com/photo/2017/03/19/18/14/solar-energy-2157212_1280.jpg
-          " 
-          alt="Cityscape at sunset with skyscrapers" 
-          className="w-full h-full object-cover bg-zoom"
+        <video
+          className="w-full h-full object-cover"
+          src="https://videos.pexels.com/video-files/854985/854985-sd_640_360_25fps.mp4"
+          autoPlay
+          loop
+          muted
+          playsInline
         />
         <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/60"></div>
       </div>
@@ -29,7 +33,10 @@ const HeroSection = () => {
             ChargeDock
           </h1>
         </div>
-        <p className={`text-xl md:text-4xl text-white max-w-3xl mx-auto mt-4 mb-8 font-modern whitespace-nowrap ${isClient ? 'slide-left-to-right' : ''}`}>
+        <p
+          ref={paragraphRef}
+          className="text-xl md:text-4xl text-white max-w-3xl mx-auto mt-4 mb-8 font-modern whitespace-nowrap"
+        >
           Sustainable E-Mobility Charging Infrastructure
         </p>
         <a 
@@ -55,11 +62,6 @@ const HeroSection = () => {
           to { opacity: 1; transform: translateY(0); }
         }
 
-        @keyframes slowZoom {
-          0% { transform: scale(1); }
-          100% { transform: scale(1.1); }
-        }
-
         @keyframes bounceSlow {
           0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
           40% { transform: translateY(-10px); }
@@ -79,10 +81,6 @@ const HeroSection = () => {
 
         .fade-in-up {
           animation: fadeInUp 1s ease-out forwards;
-        }
-
-        .bg-zoom {
-          animation: slowZoom 10s infinite alternate ease-in-out;
         }
 
         .animate-bounce-slow {
@@ -106,7 +104,6 @@ const HeroSection = () => {
 
         @media (prefers-reduced-motion: reduce) {
           .animate-bounce-slow,
-          .bg-zoom,
           .fade-in-up,
           .slide-left-to-right,
           .animate-float,

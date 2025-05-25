@@ -17,7 +17,7 @@ const SolutionSection = () => {
 
             <a 
               href="#contact"
-              className="inline-flex items-center px-4 py-2 text-sm font-medium text-black hover:text-gray-800 transition-colors duration-300"
+              className="inline-flex items-center px-4 py-2 text-xl font-medium text-black hover:text-gray-800 transition-colors duration-300"
             >
               Stay Connected →
             </a>
