@@ -8,7 +8,7 @@ const HeroSection = () => {
     setIsClient(true);
   }, []);
 
-  if (!isClient) return null; // Skip rendering on the server
+  if (!isClient) return null;
 
   return (
     <section className="relative h-screen flex items-center justify-center overflow-hidden">
@@ -26,23 +26,23 @@ const HeroSection = () => {
       </div>
 
       {/* Content */}
-      <div className="container mx-auto px-4 relative z-10 text-center">
-        <div className="flex items-center justify-center mb-4 space-x-3">
-          <BatteryCharging className="text-green-400" size={150} />
-          <h1 className="text-4xl md:text-8xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-blue-500 fade-in-up leading-relaxed pb-2">
+      <div className="container mx-auto px-4 max-w-2xl sm:max-w-3xl lg:max-w-4xl text-center relative z-10">
+        <div className="flex flex-col sm:flex-row items-center justify-center mb-4 gap-4 sm:space-x-4">
+          <BatteryCharging className="text-green-400 w-16 h-16 sm:w-24 sm:h-24 md:w-36 md:h-36" />
+          <h1 className="text-3xl sm:text-4xl md:text-6xl lg:text-8xl font-bold text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-blue-500 fade-in-up leading-relaxed pb-2">
             ChargeDock
           </h1>
         </div>
 
-        <p className="text-xl md:text-4xl text-white max-w-3xl mx-auto mt-4 mb-8 font-modern whitespace-nowrap slide-left-to-right">
+        <p className="text-base sm:text-lg md:text-2xl lg:text-4xl text-white mx-auto mt-4 mb-8 font-modern slide-left-to-right whitespace-nowrap">
           Sustainable E-Mobility Charging Infrastructure
         </p>
 
         <a 
           href="#problem" 
-          className="inline-flex items-center px-11 py-5 bg-gradient-to-r from-green-500 to-blue-500 text-white rounded-lg font-medium hover:from-green-600 hover:to-blue-600 hover:scale-110 hover:shadow-2xl hover:shadow-green-500/70 transition-all duration-300 animate-pulse-border relative overflow-hidden group"
+          className="inline-flex items-center px-6 sm:px-8 md:px-11 py-3 sm:py-4 md:py-5 bg-gradient-to-r from-green-500 to-blue-500 text-white rounded-lg font-medium hover:from-green-600 hover:to-blue-600 hover:scale-110 hover:shadow-2xl hover:shadow-green-500/70 transition-all duration-300 animate-pulse-border relative overflow-hidden group"
         >
-          <span className="relative z-10 text-xl md:text-2xl">Learn More</span>
+          <span className="relative z-10 text-base sm:text-lg md:text-xl lg:text-2xl">Learn More</span>
           <span className="absolute inset-0 bg-white/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>
         </a>
       </div>
