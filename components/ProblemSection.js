@@ -2,22 +2,24 @@ import React from 'react';
 
 const ProblemSection = () => {
   return (
-    <section id="problem" className="py-20 bg-white">
+    <section id="problem" className="py-16 md:py-24 bg-white">
       <div className="container mx-auto px-4 md:px-8">
-        <h2 className="text-3xl md:text-4xl font-bold mb-16 text-center">
+        {/* ↓––smaller bottom-margin on mobile, original 16 preserved for md+  */}
+        <h2 className="text-3xl md:text-4xl font-bold mb-8 md:mb-16 text-center">
           The Problem
         </h2>
 
         <div className="flex flex-col md:flex-row gap-12 md:gap-20">
-          {/* Left Column — Custom vertical offset */}
+          {/* Left Column */}
           <div className="flex-1 flex justify-start">
-            <div className="max-w-xl mx-auto text-center md:text-left mt-10">
+            {/* ↓––cut down the extra top margin on mobile  */}
+            <div className="max-w-xl mx-auto text-center md:text-left mt-6 md:mt-10">
               <p className="text-lg md:text-xl text-gray-700 mb-6">
-                Universities, apartments, and cities are banning the indoor charging and storage 
+                Universities, apartments, and cities are banning the indoor charging and storage
                 of electric scooters and other electric personal assistive mobility devices.
               </p>
               <p className="text-lg md:text-xl text-gray-700">
-                This gap in infrastructure leaves students, commuters, and delivery workers without a safe, 
+                This gap in infrastructure leaves students, commuters, and delivery workers without a safe,
                 secure place to charge or store their devices.
               </p>
             </div>
@@ -26,10 +28,10 @@ const ProblemSection = () => {
           {/* Right Column */}
           <div className="flex-1 flex flex-col justify-center">
             <h3 className="text-2xl font-semibold text-center mb-6">
-              UL Standards & Certifications Survey of Colleges & Universities
+              UL Standards &amp; Certifications Survey of Colleges &amp; Universities
             </h3>
 
-            {/* First Banner - Red Theme */}
+            {/* First Banner */}
             <div className="bg-gray-100 p-6 rounded-lg border-l-4 border-red-500 mb-4">
               <div className="flex items-center">
                 <div className="text-3xl md:text-4xl font-bold text-red-500 mr-4">65%</div>
@@ -39,7 +41,7 @@ const ProblemSection = () => {
               </div>
             </div>
 
-            {/* Second Banner - Orange Theme */}
+            {/* Second Banner */}
             <div className="bg-gray-100 p-6 rounded-lg border-l-4 border-orange-500 mb-4">
               <div className="flex items-center">
                 <div className="text-3xl md:text-4xl font-bold text-orange-500 mr-4">57%</div>
@@ -49,9 +51,9 @@ const ProblemSection = () => {
               </div>
             </div>
 
-            {/* Learn More Link - Black Theme */}
+            {/* Learn More */}
             <div className="flex justify-center md:justify-end mt-2">
-              <a 
+              <a
                 href="https://ulse.org/news/supporting-safer-e-mobility-college-campuses"
                 target="_blank"
                 rel="noopener noreferrer"
