@@ -12,7 +12,7 @@ const HeroSection = () => {
       <div className="absolute inset-0 z-0">
         <video
           className="w-full h-full object-cover"
-          src="https://videos.pexels.com/video-files/855005/855005-sd_640_360_30fps.mp4"
+          src="https://videos.pexels.com/video-files/5659664/5659664-sd_640_360_24fps.mp4"
           autoPlay
           loop
           muted
