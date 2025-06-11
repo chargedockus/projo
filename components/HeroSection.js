@@ -7,8 +7,8 @@ const HeroSection = () => {
   if (!isClient) return null;
 
   return (
-    <section className="relative h-screen flex items-center justify-center overflow-hidden">
-      {/* ─── Background (unchanged) ─── */}
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16 sm:pt-20 md:pt-28 pb-12 sm:pb-16 md:pb-24">
+      {/* ─── Background ─── */}
       <div className="absolute inset-0 z-0">
         <video
           className="w-full h-full object-cover"
@@ -29,13 +29,11 @@ const HeroSection = () => {
       >
         {/* icon + word-mark */}
         <div className="flex items-center justify-center gap-3 mb-5">
-          {/* ⬆︎ made icon bigger on base */}
           <BatteryCharging className="text-green-400 w-14 h-14 sm:w-20 sm:h-20 md:w-28 md:h-28 lg:w-36 lg:h-36" />
-          {/* ⬆︎ headline larger on base, then steps up */}
           <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl
                          font-bold tracking-tight
                          text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-blue-500
-                         fade-in-up leading-tight pb-2">
+                         fade-in-up leading-tight break-words pb-2">
             ChargeDock
           </h1>
         </div>
@@ -49,7 +47,7 @@ const HeroSection = () => {
           Sustainable&nbsp;E-Mobility&nbsp;Charging&nbsp;Infrastructure
         </p>
 
-        {/* button – slightly wider on phones so it feels substantial */}
+        {/* button */}
         <a
           href="#problem"
           className="inline-flex items-center
@@ -85,24 +83,37 @@ const HeroSection = () => {
 
       {/* ─── animations ─── */}
       <style>{`
-        @keyframes fadeInUp   { from {opacity:0; transform:translateY(20px)}
-                                to   {opacity:1; transform:translateY(0)} }
-        @keyframes slideLeftToRight { from {opacity:0; transform:translateX(-100%)}
-                                      to   {opacity:1; transform:translateX(0)} }
-        @keyframes floatSlow  { 0%,100% {transform:translateY(0)}
-                                50%      {transform:translateY(-6px)} }
+        @keyframes fadeInUp {
+          from { opacity: 0; transform: translateY(20px); }
+          to { opacity: 1; transform: translateY(0); }
+        }
+        @keyframes slideLeftToRight {
+          from { opacity: 0; transform: translateX(-100%); }
+          to { opacity: 1; transform: translateX(0); }
+        }
+        @keyframes floatSlow {
+          0%, 100% { transform: translateY(0); }
+          50% { transform: translateY(-6px); }
+        }
 
-        .fade-in-up          { animation:fadeInUp 1s ease-out forwards }
-        .slide-left-to-right { animation:slideLeftToRight 1.5s ease-out forwards; opacity:0 }
-        .animate-float-slow  { animation:floatSlow 4s ease-in-out infinite }
+        .fade-in-up {
+          animation: fadeInUp 1s ease-out forwards;
+        }
+        .slide-left-to-right {
+          animation: slideLeftToRight 1.5s ease-out forwards;
+          opacity: 0;
+        }
+        .animate-float-slow {
+          animation: floatSlow 4s ease-in-out infinite;
+        }
 
         @media (prefers-reduced-motion: reduce) {
           .fade-in-up,
           .slide-left-to-right,
           .animate-float-slow {
-            animation:none!important;
-            opacity:1!important;
-            transform:none!important;
+            animation: none !important;
+            opacity: 1 !important;
+            transform: none !important;
           }
         }
       `}</style>
