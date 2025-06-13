@@ -7,7 +7,7 @@ const HeroSection = () => {
   if (!isClient) return null;
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-16 sm:pt-20 md:pt-28 pb-12 sm:pb-16 md:pb-24">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-24 sm:pt-32 md:pt-40 pb-16 sm:pb-24 md:pb-32">
       {/* ─── Background ─── */}
       <div className="absolute inset-0 z-0">
         <video
@@ -17,33 +17,34 @@ const HeroSection = () => {
           loop
           muted
           playsInline
+          poster="/fallback.jpg" // Optional: fallback image
         />
         <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/60" />
       </div>
 
       {/* ─── Content ─── */}
-      <div
-        className="container mx-auto px-4
-                   max-w-full sm:max-w-3xl lg:max-w-5xl xl:max-w-4xl
-                   text-center relative z-10"
-      >
+      <div className="container mx-auto px-4 max-w-full sm:max-w-3xl lg:max-w-5xl xl:max-w-4xl text-center relative z-10">
         {/* icon + word-mark */}
-        <div className="flex items-center justify-center gap-3 mb-5">
-          <BatteryCharging className="text-green-400 w-14 h-14 sm:w-20 sm:h-20 md:w-28 md:h-28 lg:w-36 lg:h-36" />
-          <h1 className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl
-                         font-bold tracking-tight
-                         text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-blue-500
-                         fade-in-up leading-tight break-words pb-2">
+        <div className="flex items-center justify-center gap-3 mb-6 sm:mb-8">
+          <BatteryCharging className="text-green-400 w-14 h-14 sm:w-20 sm:h-20 md:w-24 md:h-24 lg:w-28 lg:h-28" />
+          <h1
+            className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl
+                       font-bold tracking-tight
+                       text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-blue-500
+                       fade-in-up leading-tight pb-4 pt-4 sm:pt-6 sm:pb-6 break-words"
+          >
             ChargeDock
           </h1>
         </div>
 
         {/* tag-line */}
-        <p className="text-base sm:text-lg md:text-2xl lg:text-4xl
-                      font-semibold text-white
-                      mx-auto mt-4 mb-10
-                      slide-left-to-right
-                      whitespace-normal sm:whitespace-nowrap">
+        <p
+          className="text-base sm:text-lg md:text-2xl lg:text-4xl
+                     font-semibold text-white
+                     mx-auto mt-2 mb-10
+                     slide-left-to-right
+                     whitespace-normal sm:whitespace-nowrap"
+        >
           Sustainable&nbsp;E-Mobility&nbsp;Charging&nbsp;Infrastructure
         </p>
 
