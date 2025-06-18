@@ -9,7 +9,7 @@ const HeroSection = () => {
   if (!isClient) return null;
 
   return (
-    <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-24 sm:pt-32 md:pt-40 pb-16 sm:pb-24 md:pb-32">
+    <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-24 sm:pt-32 md:pt-40 pb-24 sm:pb-32 md:pb-40">
       {/* ─── Top-right Navigation ─── */}
       <div className="absolute top-6 right-6 z-20 flex items-center gap-6">
         <a
@@ -42,13 +42,13 @@ const HeroSection = () => {
 
       {/* ─── Hero Content ─── */}
       <div className="container mx-auto px-4 max-w-full sm:max-w-3xl lg:max-w-5xl xl:max-w-4xl text-center relative z-10 overflow-visible">
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-3 mb-4 sm:mb-6">
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-3 mb-4 sm:mb-6 lg:mb-10">
           <BatteryCharging className="text-green-400 w-14 h-14 sm:w-20 sm:h-20 md:w-24 md:h-24 lg:w-28 lg:h-28" />
           <h1
             className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl
                        font-bold tracking-tight
                        text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-blue-500
-                       leading-[1.1] pt-4 sm:pt-6 break-words"
+                       leading-[1.1] pt-4 sm:pt-6 break-words mb-4 lg:mb-8"
           >
             ChargeDock
           </h1>
