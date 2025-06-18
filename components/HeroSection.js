@@ -3,12 +3,30 @@ import { BatteryCharging } from 'lucide-react';
 
 const HeroSection = () => {
   const [isClient, setIsClient] = useState(false);
+  const [showContact, setShowContact] = useState(false);
+
   useEffect(() => setIsClient(true), []);
   if (!isClient) return null;
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden pt-24 sm:pt-32 md:pt-40 pb-16 sm:pb-24 md:pb-32">
-      {/* ─── Background ─── */}
+      {/* ─── Top-right Navigation ─── */}
+      <div className="absolute top-6 right-6 z-20 flex items-center gap-6">
+        <a
+          href="#problem"
+          className="text-white text-sm sm:text-base md:text-lg no-underline hover:text-gray-300 transition font-medium"
+        >
+          Learn More
+        </a>
+        <button
+          onClick={() => setShowContact(true)}
+          className="text-white text-sm sm:text-base md:text-lg font-medium hover:text-gray-300 transition bg-transparent p-0 m-0 border-none"
+        >
+          Contact Us
+        </button>
+      </div>
+
+      {/* ─── Background Video ─── */}
       <div className="absolute inset-0 z-0">
         <video
           className="w-full h-full object-cover"
@@ -17,60 +35,36 @@ const HeroSection = () => {
           loop
           muted
           playsInline
-          poster="/fallback.jpg" // Optional: fallback image
+          poster="/fallback.jpg"
         />
         <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/60" />
       </div>
 
-      {/* ─── Content ─── */}
+      {/* ─── Hero Content ─── */}
       <div className="container mx-auto px-4 max-w-full sm:max-w-3xl lg:max-w-5xl xl:max-w-4xl text-center relative z-10">
-        {/* icon + word-mark */}
-        <div className="flex items-center justify-center gap-3 mb-6 sm:mb-8">
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-3 mb-4 sm:mb-6">
           <BatteryCharging className="text-green-400 w-14 h-14 sm:w-20 sm:h-20 md:w-24 md:h-24 lg:w-28 lg:h-28" />
           <h1
             className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl
                        font-bold tracking-tight
                        text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-blue-500
-                       fade-in-up leading-tight pb-4 pt-4 sm:pt-6 sm:pb-6 break-words"
+                       leading-tight pb-2 pt-4 sm:pt-6 sm:pb-2 break-words"
           >
             ChargeDock
           </h1>
         </div>
 
-        {/* tag-line */}
         <p
-          className="text-base sm:text-lg md:text-2xl lg:text-4xl
+          className="text-xl sm:text-2xl md:text-3xl lg:text-4xl
                      font-semibold text-white
-                     mx-auto mt-2 mb-10
-                     slide-left-to-right
-                     whitespace-normal sm:whitespace-nowrap"
+                     mx-auto mb-10"
         >
-          Sustainable&nbsp;E-Mobility&nbsp;Charging&nbsp;Infrastructure
+          Sustainable E-Mobility Charging Infrastructure
         </p>
-
-        {/* button */}
-        <a
-          href="#problem"
-          className="inline-flex items-center
-                     px-6 sm:px-8 md:px-11
-                     py-3 sm:py-4 md:py-5
-                     bg-gradient-to-r from-green-500 to-blue-500 text-white
-                     rounded-lg font-medium
-                     transition-transform duration-300
-                     hover:scale-105 hover:shadow-lg
-                     focus:outline-none focus:ring-4 focus:ring-green-400/40
-                     fade-in-up"
-          style={{ animationDelay: '0.3s' }}
-        >
-          Learn&nbsp;More
-        </a>
       </div>
 
-      {/* ─── scroll indicator ─── */}
-      <div
-        className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-float-slow"
-        aria-label="Scroll down"
-      >
+      {/* ─── Scroll Indicator ─── */}
+      <div className="absolute bottom-8 left-1/2 -translate-x-1/2 animate-bounce" aria-label="Scroll down">
         <svg width="22" height="22" viewBox="0 0 24 24" fill="none">
           <path
             d="M12 5v14m0 0 7-7m-7 7-7-7"
@@ -82,42 +76,68 @@ const HeroSection = () => {
         </svg>
       </div>
 
-      {/* ─── animations ─── */}
-      <style>{`
-        @keyframes fadeInUp {
-          from { opacity: 0; transform: translateY(20px); }
-          to { opacity: 1; transform: translateY(0); }
-        }
-        @keyframes slideLeftToRight {
-          from { opacity: 0; transform: translateX(-100%); }
-          to { opacity: 1; transform: translateX(0); }
-        }
-        @keyframes floatSlow {
-          0%, 100% { transform: translateY(0); }
-          50% { transform: translateY(-6px); }
-        }
-
-        .fade-in-up {
-          animation: fadeInUp 1s ease-out forwards;
-        }
-        .slide-left-to-right {
-          animation: slideLeftToRight 1.5s ease-out forwards;
-          opacity: 0;
-        }
-        .animate-float-slow {
-          animation: floatSlow 4s ease-in-out infinite;
-        }
-
-        @media (prefers-reduced-motion: reduce) {
-          .fade-in-up,
-          .slide-left-to-right,
-          .animate-float-slow {
-            animation: none !important;
-            opacity: 1 !important;
-            transform: none !important;
-          }
-        }
-      `}</style>
+      {/* ─── Contact Form Modal ─── */}
+      {showContact && (
+        <div className="fixed inset-0 z-30 flex items-center justify-center bg-black/40 backdrop-blur-sm">
+          <div className="bg-white rounded-xl shadow-xl w-full max-w-md p-6 relative">
+            <button
+              onClick={() => setShowContact(false)}
+              className="absolute top-4 right-4 text-gray-500 hover:text-gray-800"
+            >
+              ✕
+            </button>
+            <h2 className="flex items-center gap-2 text-lg font-semibold mb-4">
+              <BatteryCharging className="text-green-500 w-5 h-5" />
+              Contact ChargeDock
+            </h2>
+            <form
+              onSubmit={(e) => {
+                e.preventDefault();
+                const name = e.target.name.value;
+                const email = e.target.email.value;
+                const message = e.target.message.value;
+                window.location.href = `mailto:chargedockus@gmail.com?subject=Message from ${name}&body=From: ${email}%0D%0A%0D%0A${encodeURIComponent(message)}`;
+              }}
+            >
+              <div className="mb-3">
+                <label className="block text-sm font-medium mb-1">Name</label>
+                <input
+                  name="name"
+                  required
+                  className="w-full px-3 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-green-500"
+                  placeholder="Your name"
+                />
+              </div>
+              <div className="mb-3">
+                <label className="block text-sm font-medium mb-1">Email</label>
+                <input
+                  type="email"
+                  name="email"
+                  required
+                  className="w-full px-3 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-green-500"
+                  placeholder="you@example.com"
+                />
+              </div>
+              <div className="mb-4">
+                <label className="block text-sm font-medium mb-1">Message</label>
+                <textarea
+                  name="message"
+                  required
+                  className="w-full px-3 py-2 border rounded focus:outline-none focus:ring-2 focus:ring-green-500"
+                  rows="4"
+                  placeholder="Your message..."
+                />
+              </div>
+              <button
+                type="submit"
+                className="w-full bg-green-600 text-white font-semibold py-2 rounded hover:bg-green-700"
+              >
+                Send Message
+              </button>
+            </form>
+          </div>
+        </div>
+      )}
     </section>
   );
 };
