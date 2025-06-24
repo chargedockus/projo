@@ -50,7 +50,7 @@ const HeroSection = () => {
                          font-bold tracking-tight 
                          text-transparent bg-clip-text bg-gradient-to-r from-green-400 to-blue-500
                          leading-none p-0 m-0"
-              style={{ paddingBottom: '0.1em' }}
+              style={{ paddingBottom: '0.4em' }}
             >
               ChargeDock
             </h1>
