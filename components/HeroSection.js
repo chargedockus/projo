@@ -42,8 +42,8 @@ const HeroSection = () => {
 
       {/* ─── Hero Content ─── */}
       <div className="container mx-auto px-4 max-w-full sm:max-w-3xl lg:max-w-5xl xl:max-w-4xl text-center relative z-10 overflow-visible">
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-3 mb-4 sm:mb-6 pb-4">
-          <BatteryCharging className="text-green-400 w-14 h-14 sm:w-20 sm:h-20 md:w-24 md:h-24 lg:w-28 lg:h-28" />
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-3 mb-4 sm:mb-6 pb-4 -mt-5">
+          <BatteryCharging className="text-green-400 w-14 h-14 sm:w-20 sm:h-20 md:w-24 md:h-24 lg:w-28 lg:h-28 -mt-5" />
           <div className="relative">
             <h1
               className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl
@@ -60,7 +60,7 @@ const HeroSection = () => {
         <p
           className="text-xl sm:text-2xl md:text-3xl lg:text-4xl
                      font-semibold text-white
-                     mx-auto mb-10"
+                     mx-auto mb-10 -mt-8"
         >
           Sustainable E-Mobility Charging Infrastructure
         </p>
