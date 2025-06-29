@@ -30,13 +30,16 @@ const HeroSection = () => {
       <div className="absolute inset-0 z-0">
         <video
           className="w-full h-full object-cover"
-          src="https://videos.pexels.com/video-files/5659664/5659664-sd_640_360_24fps.mp4"
+          src="/lpvideo.mp4"
           autoPlay
           loop
           muted
           playsInline
           poster="/fallback.jpg"
-        />
+        >
+          <source src="/lpvideo.mp4" type="video/mp4" />
+          Your browser does not support the video tag.
+        </video>
         <div className="absolute inset-0 bg-gradient-to-b from-transparent to-black/60" />
       </div>
 
